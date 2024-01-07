@@ -13,23 +13,28 @@ with open(budget_data, 'r') as csv_file:
     csv_header = next(csv_reader)
     print(f"Header: {csv_header}")
 
-     # Counter variable for counting months
+     # Counter variable -initialize variables
     month_count = 0
+    profit_losses_total = 0
 
     # Iterate through rows
     for row in csv_reader:
         
-        if row:
-        # Assuming the date is in the first column, adjust if needed
-            mounth_count = row[0]
+        # count months in first column and increment 1x1
+        mounth_count = row[0]
+        month_count += 1
 
-        # Check if the date is not empty (assuming dates are never empty)
-        if month_count:
-            # Increment the month count
-            month_count += 1
+        # total profit losses over the entire period converting string to float
+        profit_losses = float(row[1])
+        profit_losses_total += profit_losses
+
+        profit_losses_average = profit_losses_total/86
 
     # Print the total number of months
     print(f"Total Months: {month_count}")
+    print(f"Total Profit/Losses, {profit_losses_total}")
+    print(f"Average Profit/Losses, {profit_losses_average}")
+
 
 
 
