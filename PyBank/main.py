@@ -4,7 +4,7 @@ import csv
 budget_data = os.path.join("PyBank",'Resources', 'budget_data.csv')
 
 # Open and read the csv
-with open(budget_data) as csv_file:
+with open(budget_data, 'r') as csv_file:
 
     # Initialize csv.reader
     csv_reader = csv.reader(csv_file, delimiter=',')
