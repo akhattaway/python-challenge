@@ -38,6 +38,7 @@ with open(budget_data, 'r') as csv_file:
             if change > greatest_increase:
                 greatest_increase = change
 
+            #set greatest decrease 
             if change < greatest_decrease:
                 greatest_decrease = change 
 
