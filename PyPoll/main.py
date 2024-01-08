@@ -46,3 +46,16 @@ for candidate, votes in Candidates.items():
         Winner = candidate
 print(f"Winner: {Winner}")
 
+file_path = os.path.join("PyPoll","analysis", "output.txt")
+with open(file_path, "w") as file:
+    # Write your output to the file
+    file.write("Election Results\n")
+    file.write("---------------------\n")
+    file.write(f"Total Votes: {voter_count}\n")
+    file.write("---------------------\n")
+    for candidate, votes in Candidates.items():
+        candidate_percentage = (votes / voter_count) * 100
+        file.write(f"{candidate}: {votes} votes, {candidate_percentage:.3f}% of all votes\n")
+    file.write("---------------------\n")
+    file.write(f"Winner: {Winner}\n")
+    file.write("---------------------\n")
