@@ -53,7 +53,18 @@ with open(budget_data, 'r') as csv_file:
     
     # Print the results
     print(f"Total Months: {month_count}")
-    print(f"Total Profit/Losses: {profit_losses_total}")
-    print(f"Average Change: {average_change:.2f}")
-    print(f"Greatest Increase: {greatest_increase}")
-    print(f"Greatest Decrease: {greatest_decrease}")
+    print(f"Total: ${profit_losses_total:.0f}")
+    print(f"Average Change: ${average_change:.2f}")
+    print(f"Greatest Increase in Profits: ${greatest_increase:.0f}")
+    print(f"Greatest Decrease in Profits: ${greatest_decrease:.0f}")
+
+file_path = os.path.join("PyBank","analysis", "output.txt")
+with open(file_path, "w") as file:
+    # Write your output to the file
+    file.write("Financial Analysis\n")
+    file.write("---------------------\n")
+    file.write(f"Total Months: {month_count}\n")
+    file.write(f"Total: ${profit_losses_total:0f}\n")
+    file.write(f"Average Change: ${average_change:.2f}\n")
+    file.write(f"Greatest Increase in Profits: ${greatest_increase:.0f}\n")
+    file.write(f"Greatest Decrease in Profits: ${greatest_decrease:.0f}\n")
