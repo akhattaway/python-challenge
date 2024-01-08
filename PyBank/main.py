@@ -10,6 +10,7 @@ with open(budget_data, 'r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     # Read the header row
     csv_header = next(csv_reader)
+    print(f"Column Headers: {csv_header}")
     
     # Initialize variables
     month_count = 0
